@@ -7,11 +7,13 @@ component {
     this.author = "Gavin Pickin";
     this.webUrl = "https://github.com/gpickin/environmentHeader";
 
+    property name="controller" inject="coldbox";
+
     function configure() {
     }
 
     /**
-     * This function is the core of the Environment header module. 
+     * This function is the core of the Environment header module.
 	 * This fires on onRequestCapture and adds the ColdBox Environment of the app to the event headers with the key X-ColdBox-Env
      * @event
      * @interceptData
@@ -20,6 +22,6 @@ component {
      * @prc
      */
     function onRequestCapture( event, interceptData, buffer, rc, prc ) {
-        event.setHTTPHeader( name = "x-coldbox-env", value = event.getController().getSetting( "environment" ) );
+       	event.setHTTPHeader( name = "x-coldbox-env", value = controller.getSetting( "environment" ) );
 	}
 }
