@@ -16,7 +16,7 @@ The module sets a header called `x-coldbox-env`.
 
 The module listens to the onRequestCapture ColdBox interception point.
 
-### How does it determine the Version?
+### How does it determine the Environment?
 
 This module looks the ColdBox setting, environment, with `getSetting( "environment" )`
 
