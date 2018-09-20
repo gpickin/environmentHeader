@@ -1,0 +1,40 @@
+{
+    "name":"environmentHeader",
+    "version":"1.0.2",
+    "author":"Gavin Pickin",
+    "location":"gpickin/environmentHeader#v1.0.2",
+    "homepage":"https://github.com/gpickin/environmentHeader",
+    "documentation":"https://github.com/gpickin/environmentHeader",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/gpickin/environmentHeader"
+    },
+    "bugs":"https://github.com/gpickin/environmentHeader/issues",
+    "slug":"environmentHeader",
+    "shortDescription":"Add ColdBox App Environment headers to your app in one module",
+    "description":"Add ColdBox App Environment headers to your app in one module",
+    "type":"modules",
+    "dependencies":{},
+    "devDependencies":{
+        "coldbox":"^4.3.0+188",
+        "testbox":"^2.4.0+80"
+    },
+    "installPaths":{
+        "testbox":"testbox",
+        "coldbox":"tests/resources/app/coldbox"
+    },
+    "scripts":{
+        "postVersion":"package set location='gpickin/environmentHeader#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push && !git push --tags"
+    },
+    "ignore":[
+        "**/.*",
+        "test",
+        "tests"
+    ],
+    "testbox":{
+        "runner":"http://localhost:51647/tests/runner.cfm",
+        "verbose":false
+    }
+}
